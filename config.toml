@@ -206,6 +206,14 @@ theme = "LoveIt"
     url = "/about/"
     title = ""
     weight = 3
+  [[menu.main]]
+      identifier = "github"
+      pre = "<i class='fab fa-github fa-fw'></i>"
+      post = ""
+      name = ""
+      url = "https://github.com/PTrain666"
+      title = "GitHub"
+      weight = 4
 
 # Hugo 解析文档的配置
 [markup]
