@@ -178,6 +178,27 @@ theme = "LoveIt"
         # 可以在你的项目下相同路径存放你自己的数据文件:
         # "assets/data/emoji/"
         emoji = ""
+
+    [params.search]
+        enable = true
+        # 搜索引擎的类型 ("lunr", "algolia")
+        type = "algolia"
+        # 文章内容最长索引长度
+        contentLength = 4000
+        # 搜索框的占位提示语
+        placeholder = ""
+        # 最大结果数目
+        maxResultLength = 10
+        # 结果内容片段长度
+        snippetLength = 50
+        # 搜索结果中高亮部分的 HTML 标签
+        highlightTag = "em"
+        # 是否在搜索索引中使用基于 baseURL 的绝对路径
+        absoluteURL = false
+        [params.search.algolia]
+          index = "blog"
+          appID = "DY3IPG94HO"
+          searchKey = "e9b70bb1815b657ef5122006a8a499b6"
 [menu]
   [[menu.main]]
     identifier = "posts"
