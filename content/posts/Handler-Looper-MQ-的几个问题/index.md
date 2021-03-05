@@ -303,8 +303,18 @@ pollOnce() 不会一直跳不出，只要有事件到来，都能跳出死循环
 
 > 答：同样是通过 epoll 机制唤醒
 
+## Worker Pool
+
+其实无论是 Android 还是其他的事件驱动的模型，原理都相似，下文就是介绍一个 Worker Pool 的设计。
+
+其实，我们的主线程可以看做是一个消费者，不断消费各种事件，而各种其他的线程(Android 中，如 InputManagerService 等等系统服务)都可以看做是生产者，不断的产生事件通知，交给主线程处理，从而让整个程序得以运转。
+
+[https://www.yangyang.cloud/blog/2018/11/09/worker-pool-with-eventfd/](https://www.yangyang.cloud/blog/2018/11/09/worker-pool-with-eventfd/)
 ## 总结
 
 其实了解这些对于实际开发作用并不大，而且整个过程依然有很多细节没有深究。
 
 但是，对于原理和模型的了解是十分必要的，了解了这些才能举一反三。
+
+## 引用
+[https://www.yangyang.cloud/blog/2018/11/09/worker-pool-with-eventfd/](https://www.yangyang.cloud/blog/2018/11/09/worker-pool-with-eventfd/)
