@@ -111,7 +111,7 @@ for (;;) {
 先看看 quit() 方法，其实它调用的是 MQ.quit() 方法，可以传一个 safe 参数判断是否管理剩余的消息。具体的代码如下：
 
 ```java
-oid quit(boolean safe) {
+void quit(boolean safe) {
     if (!mQuitAllowed) {
         throw new IllegalStateException("Main thread not allowed to quit.");
     }
@@ -131,7 +131,7 @@ oid quit(boolean safe) {
         // We can assume mPtr != 0 because mQuitting was previously false.
         nativeWake(mPtr);
     }
-    }
+}
 ```
 
 通过源码会发现 mQuitAllowed 这个值，如果是 false, 就是不让 Looper 退出直接抛出异常，且这个参数是 Looper 初始化时传入的。
