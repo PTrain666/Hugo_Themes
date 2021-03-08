@@ -105,6 +105,6 @@ close(fd);
 
 通过阅读了部分 MMKV 的代码，学到了如下知识：
 
-1. 学会了基本的 mmap() 和 mempy() 的使用
+1. 学会了基本的 mmap() 和 memcpy() 的使用
 2. 了解了部分 mmap() 原理
 3. 了解了一些 protobuf 相关的内容
